@@ -1,0 +1,11 @@
+{
+  "/cclproxy/*": {
+    "target": "http://phsacdeanp.cerncd.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/cclproxy": ""
+    }
+  }
+}
