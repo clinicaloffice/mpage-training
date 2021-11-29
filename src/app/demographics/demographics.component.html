@@ -1,0 +1,13 @@
+<ng-container *ngIf="personService.isLoaded()">
+    <div class="callout">
+        <h2>{{ personService.get().nameFullFormatted }}</h2>
+        <div class="sideways-list">
+            <ul>
+                <li><strong>MRN:</strong> {{ personService.getAlias("MRN").aliasFormatted }}</li>
+                <li><strong>DOB:</strong> {{ personService.get().birthDtTm | date : 'MM/dd/yyyy' }}</li>
+                <li><strong>Gender:</strong> {{ personService.get().sex }}</li>
+                <li><strong>PCP:</strong> {{ personService.getPrsnlReltn("PCP").nameFullFormatted }}</li>
+            </ul>
+        </div>
+    </div>
+</ng-container>

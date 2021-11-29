@@ -2,3 +2,38 @@
 @use '~@angular/material' as mat;
 @import "theme";
 
+// * Custom CSS *//
+table {
+    width: 100%;
+}
+
+h2 {
+    padding-bottom: 0;
+    margin-bottom: 0 !important;
+}
+
+.callout {
+    background-color: #d8eeff;
+    border: 1px solid black;
+}
+
+.component-container, .callout {
+    @include mat-elevation(8);
+    margin-top: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+.sideways-list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sideways-list li {
+    display: inline-block;
+    padding-right: 1.5em;
+}
+
+.mat-checkbox label {
+    padding-right: .5rem;
+}

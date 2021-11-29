@@ -1,0 +1,38 @@
+<div class="component-container">
+    <h2>Allergies</h2>
+
+    <!-- Filters -->
+    <div>
+        <mat-checkbox [(ngModel)]="drugFilter" (change)="refreshDataSource()">Drug</mat-checkbox>
+        <mat-checkbox [(ngModel)]="envFilter" (change)="refreshDataSource()">Environment</mat-checkbox>
+        <mat-checkbox [(ngModel)]="foodFilter" (change)="refreshDataSource()">Food</mat-checkbox>
+        <mat-checkbox [(ngModel)]="otherFilter" (change)="refreshDataSource()">Other</mat-checkbox>
+    </div>
+
+    <!-- Display the allergy table if loaded -->
+    <ng-container *ngIf="ready">
+        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)">
+            <!-- Define table columns -->
+            <ng-container matColumnDef="substance_type">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Substance Type</th>
+                <td mat-cell *matCellDef="let element">{{ element["substanceType"] }}</td>
+            </ng-container>
+            <ng-container matColumnDef="substance">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Substance</th>
+                <td mat-cell *matCellDef="let element">{{ element["substance"] }}</td>
+            </ng-container>
+            <ng-container matColumnDef="substance_identifier">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Substance ID</th>
+                <td mat-cell *matCellDef="let element">{{ element["substanceIdentifier"] }}</td>
+            </ng-container>
+
+            <!-- Define rows -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    </ng-container>
+
+    <!-- Paginator -->
+    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+
+</div>

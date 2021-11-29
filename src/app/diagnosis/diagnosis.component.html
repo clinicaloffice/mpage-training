@@ -1,0 +1,30 @@
+<div class="component-container">
+    <h2>Diagnosis</h2>
+
+    <!-- Display the problems table if loaded -->
+    <ng-container *ngIf="ready">
+        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)">
+            <!-- Define table columns -->
+            <ng-container matColumnDef="diag_date">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Onset Date</th>
+                <td mat-cell *matCellDef="let element">{{ element.diagDtTm | date : 'MM/dd/yyyy' }}</td>
+            </ng-container>
+            <ng-container matColumnDef="diagnosis">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Diagnosis</th>
+                <td mat-cell *matCellDef="let element">{{ element.dxSourceString }}</td>
+            </ng-container>
+            <ng-container matColumnDef="diagnosis_identifier">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Diagnosis ID</th>
+                <td mat-cell *matCellDef="let element">{{ element.dxSourceIdentifier }}</td>
+            </ng-container>
+        
+            <!-- Define rows -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    </ng-container>
+
+    <!-- Paginator -->
+    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+
+</div>
