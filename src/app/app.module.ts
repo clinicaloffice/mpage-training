@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
-import { ClinicalOfficeMpageModule } from "@clinicaloffice/clinical-office-mpage";
+import { ClinicalOfficeMpageModule, DiagnosisService } from "@clinicaloffice/clinical-office-mpage";
 import { MaterialModule } from "@clinicaloffice/clinical-office-mpage";
 import { ErrorHandlerService } from "@clinicaloffice/clinical-office-mpage";
 import { AppRoutingModule } from './app-routing.module';
