@@ -1,6 +1,12 @@
 <app-demographics></app-demographics>
-<app-allergies></app-allergies>
 
+<nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let link of navLinks" 
+        [routerLink]="link.link" routerLinkActive #rla="routerLinkActive"
+        [active]="rla.isActive">
+        {{link.label}}
+    </a>
+</nav>
 <router-outlet></router-outlet>
 
 <mpage-log-component></mpage-log-component>

@@ -14,6 +14,9 @@ import { DemographicsComponent } from './demographics/demographics.component';
 import { AllergiesComponent } from './allergies/allergies.component';
 import { ProblemsComponent } from './problems/problems.component';
 import { DiagnosisComponent } from './diagnosis/diagnosis.component';
+import { VisitHistoryComponent } from './visit-history/visit-history.component';
+import { AppointmentHistoryComponent } from './appointment-history/appointment-history.component';
+import { ProblemsDiagnosisComponent } from './problems-diagnosis/problems-diagnosis.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { DiagnosisComponent } from './diagnosis/diagnosis.component';
     DemographicsComponent,
     AllergiesComponent,
     ProblemsComponent,
-    DiagnosisComponent
+    DiagnosisComponent,
+    VisitHistoryComponent,
+    AppointmentHistoryComponent,
+    ProblemsDiagnosisComponent
   ],
   imports: [
     BrowserModule,
